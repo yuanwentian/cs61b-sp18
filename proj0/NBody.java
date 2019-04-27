@@ -2,6 +2,12 @@ public class NBody {
 
     public static String imageToDraw = "images/starfield.jpg";
 
+    public static int readNumberOfPlanets(String path) {
+        In in = new In(path);
+        int numberOfPlanets = in.readInt();
+        return numberOfPlanets;
+    }
+
     public static double readRadius(String path) {
         In in = new In(path);
         int numberOfPlanets = in.readInt();
@@ -35,16 +41,17 @@ public class NBody {
         double T = Double.parseDouble(args[0]);
         double dt = Double.parseDouble(args[1]);
         String filename = args[2];
+        int n = readNumberOfPlanets(filename);
         Planet[] planets = readPlanets(filename);
         double radius = readRadius(filename);
         for (double t=0; t <= T; t+=dt) {
-            double[] xForces = new double[5];
-            double[] yForces = new double[5];
-            for (int i=0; i<5; i++){
+            double[] xForces = new double[n];
+            double[] yForces = new double[n];
+            for (int i=0; i<n; i++){
                 xForces[i] = planets[i].calcNetForceExertedByX(planets);
                 yForces[i] = planets[i].calcNetForceExertedByY(planets);
             }
-            for (int i=0; i<5; i++){
+            for (int i=0; i<n; i++){
                 planets[i].update(dt, xForces[i], yForces[i]);
             }
             drawBackground(radius, imageToDraw);

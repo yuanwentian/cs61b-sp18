@@ -55,23 +55,19 @@ public class Planet {
 
     public double calcNetForceExertedByX(Planet[] allPlanets) {
         double NetForceX = 0;
-        double SquaredNetForceX = 0;
         for(Planet p : allPlanets) {
             if (this.calcDistance(p) == 0) continue;
-            SquaredNetForceX += this.calcForceExertedByX(p) * this.calcForceExertedByX(p);
+            NetForceX += this.calcForceExertedByX(p);
         }
-        NetForceX = Math.sqrt(SquaredNetForceX);
         return NetForceX;
     }
 
     public double calcNetForceExertedByY(Planet[] allPlanets) {
         double NetForceY = 0;
-        double SquaredNetForceY = 0;
         for(Planet p : allPlanets) {
             if (this.calcDistance(p) == 0) continue;
-            SquaredNetForceY += this.calcForceExertedByY(p) * this.calcForceExertedByY(p);
+            NetForceY += this.calcForceExertedByY(p);
         }
-        NetForceY = Math.sqrt(SquaredNetForceY);
         return NetForceY;
     }
 
