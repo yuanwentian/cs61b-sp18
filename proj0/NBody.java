@@ -36,6 +36,12 @@ public class NBody {
         return new Planet(xxPos, yyPos, xxVel, yyVel, mass, imgFileName);
     }
 
+    public static void drawBackground(double radius, String imageToDraw) {
+        StdDraw.setScale(-radius, radius);
+        StdDraw.clear();
+        StdDraw.picture(0, 0, imageToDraw);
+    }
+
     public static void main(String[] args) {
         StdDraw.enableDoubleBuffering();
         double T = Double.parseDouble(args[0]);
@@ -61,13 +67,13 @@ public class NBody {
             StdDraw.show();
             StdDraw.pause(10);
         }
-
-
-    }
-
-    public static void drawBackground(double radius, String imageToDraw) {
-        StdDraw.setScale(-radius, radius);
-        StdDraw.clear();
-        StdDraw.picture(0, 0, imageToDraw);
+        StdOut.printf("%d\n", planets.length);
+        StdOut.printf("%.2e\n", radius);
+        for (int i = 0; i < planets.length; i++) {
+            StdOut.printf("%11.4e %11.4e %11.4e %11.4e %11.4e %12s\n",
+                          planets[i].xxPos, planets[i].yyPos, planets[i].xxVel,
+                          planets[i].yyVel, planets[i].mass, planets[i].imgFileName);
+        }
     }
 }
+
