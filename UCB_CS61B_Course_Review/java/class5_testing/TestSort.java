@@ -1,4 +1,5 @@
 /** Tests the the Sort class. */
+
 public class TestSort {
 	/** Test the Sort.sort method. */
 	public static void testSort() {
