@@ -235,5 +235,21 @@ public class IntList {
         out.format(")");
         return out.toString();
     }
+
+    public static IntList reverse(IntList A) {
+        if (A == null || A.rest == null) {
+            return A;
+        } else {
+            // A: 1 -> 2     3 -> 2 -> null;
+            // 3 -> 2 -> 1 -> null
+            IntList reversed = reverse(A.rest);
+            A.rest.rest = A;
+            // 3 -> A: 2 -> 3
+            // Reversed: 3 -> A: 2 -> 3
+            A.rest = null;
+            // Reversed: 3 -> A: 2 -> null
+            return reversed;
+        }
+    }
 }
 
