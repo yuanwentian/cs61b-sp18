@@ -1,4 +1,8 @@
 /** Performs some basic linked list tests. */
+
+import static org.junit.Assert.*;
+import org.junit.Test;
+
 public class LinkedListDequeTest {
 	
 	/* Utility method for printing out empty checks. */
@@ -48,7 +52,7 @@ public class LinkedListDequeTest {
 		passed = checkSize(1, lld1.size()) && passed;
 		passed = checkEmpty(false, lld1.isEmpty()) && passed;
 
-		/*
+
 		lld1.addLast("middle");
 		passed = checkSize(2, lld1.size()) && passed;
 
@@ -57,7 +61,7 @@ public class LinkedListDequeTest {
 
 		System.out.println("Printing out deque: ");
 		lld1.printDeque();
-		*/
+
 
 		printTestStatus(passed);
 
@@ -69,7 +73,7 @@ public class LinkedListDequeTest {
 		System.out.println("Running add/remove test.");
 
 		System.out.println("Make sure to uncomment the lines below (and delete this print statement).");
-		/*
+
 		LinkedListDeque<Integer> lld1 = new LinkedListDeque<Integer>();
 		// should be empty 
 		boolean passed = checkEmpty(true, lld1.isEmpty());
@@ -77,18 +81,85 @@ public class LinkedListDequeTest {
 		lld1.addFirst(10);
 		// should not be empty 
 		passed = checkEmpty(false, lld1.isEmpty()) && passed;
-
 		lld1.removeFirst();
-		// should be empty 
+		lld1.addFirst(1);
+		lld1.addFirst(2);
+		int actualRemove = lld1.removeFirst();
+		assertEquals(2, actualRemove);
+		// should be sentinel -> 1;
+		// should be empty
+		lld1.removeFirst();
 		passed = checkEmpty(true, lld1.isEmpty()) && passed;
 
 		printTestStatus(passed);
-		*/
+	}
+
+	public static void removeLastTest() {
+		System.out.println("Running removeLast test.");
+		LinkedListDeque<Integer> lld1 = new LinkedListDeque<Integer>();
+		// should be empty
+		boolean passed = checkEmpty(true, lld1.isEmpty());
+		lld1.addFirst(1);
+		int actualRemoveLast1 = lld1.removeLast();
+		assertEquals(1, actualRemoveLast1);
+		// should be empty
+		passed = checkEmpty(true, lld1.isEmpty()) && passed;
+		lld1.addFirst(1);
+		lld1.addLast(2);
+		int actualRemoveLast2 = lld1.removeLast();
+		assertEquals(2, actualRemoveLast2);
+		// should not be empty
+		passed = checkEmpty(false, lld1.isEmpty()) && passed;
+		printTestStatus(passed);
+	}
+
+	public static void getIterativeTest() {
+		System.out.println("Running getIterative test.");
+
+		LinkedListDeque<String> lld1 = new LinkedListDeque<String>();
+		boolean passed = checkEmpty(true, lld1.isEmpty());
+		lld1.addFirst("c");
+		lld1.addFirst("b");
+		lld1.addFirst("a");
+		String actual0 = lld1.get(0);
+		assertEquals("a", actual0);
+		String actual1 = lld1.get(1);
+		assertEquals("b", actual1);
+		String actual2 = lld1.get(2);
+		assertEquals("c", actual2);
+		passed = checkEmpty(false, lld1.isEmpty()) && passed;
+		printTestStatus(passed);
+	}
+
+	public static void getRecursiveTest() {
+		System.out.println("Running getRecursive test.");
+		LinkedListDeque<String> lld1 = new LinkedListDeque<String>();
+		boolean passed = checkEmpty(true, lld1.isEmpty());
+		lld1.addFirst("c");
+		lld1.addFirst("b");
+		lld1.addFirst("a");
+		System.out.print("Should print: a b c , and the actual print is: ");
+		lld1.printDeque(); // a b c
+		passed = checkEmpty(false, lld1.isEmpty()) && passed;
+		printTestStatus(passed);
+	}
+
+	public static void printDequeTest() {
+		System.out.println("Running printDeque test.");
+		LinkedListDeque<String> lld1 = new LinkedListDeque<String>();
+		boolean passed = checkEmpty(true, lld1.isEmpty());
+		lld1.addFirst("c");
+		lld1.addFirst("b");
+		lld1.addFirst("a");
 	}
 
 	public static void main(String[] args) {
 		System.out.println("Running tests.\n");
 		addIsEmptySizeTest();
 		addRemoveTest();
+		removeLastTest();
+		getIterativeTest();
+		getRecursiveTest();
+		printDequeTest();
 	}
 } 
