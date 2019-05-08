@@ -1,27 +1,16 @@
-##### Resources
-Archive: http://inst.eecs.berkeley.edu/~cs61b/archives.html
-
-Spring 2019: https://sp19.datastructur.es
-
-Spring 2018: https://sp18.datastructur.es
-
-LectureCode: https://github.com/Berkeley-CS61B/lectureCode
-
-Autograder: https://www.gradescope.com (To sign up, use the entry code 93PK75)
+## Resources
+- Archive: http://inst.eecs.berkeley.edu/~cs61b/archives.html //
+- Spring 2019: https://sp19.datastructur.es
+- Spring 2018: https://sp18.datastructur.es
+- LectureCode: https://github.com/Berkeley-CS61B/lectureCode
+- Autograder: https://www.gradescope.com (To sign up, use the entry code 93PK75)
 The autograder is now open to the public. Sign up using entry code MNXYKX at gradescope.com.
-
-A Java Reference: http://www-inst.eecs.berkeley.edu/~cs61b/fa14/book1/java.pdf
-Head First Java: https://www.safaribooksonline.com/library/view/head-first-java/0596009208/
-其他资源：
-https://www.1point3acres.com/bbs/thread-282583-1-1.html
-这是数据结构讲义：
-https://inst.eecs.berkeley.edu/~cs61b/fa18/materials/book2/data-structures.pdf
-这是Java讲义：
-https://inst.eecs.berkeley.edu/~cs61b/fa18/materials/book1/java.pdf
-IntelliJ IDEA破解版教程：https://blog.csdn.net/qq_42914528/article/details/89710864
-
-IntelliJ IDEA遇到的一些问题
-- Class file not found in IntelliJ https://stackoverflow.com/questions/2199711/class-file-not-found-in-intellij
+- A Java Reference: http://www-inst.eecs.berkeley.edu/~cs61b/fa14/book1/java.pdf
+- Head First Java: https://www.safaribooksonline.com/library/view/head-first-java/0596009208/
+- 其他资源: https://www.1point3acres.com/bbs/thread-282583-1-1.html
+- 这是数据结构讲义：https://inst.eecs.berkeley.edu/~cs61b/fa18/materials/book2/data-structures.pdf
+- 这是Java讲义：https://inst.eecs.berkeley.edu/~cs61b/fa18/materials/book1/java.pdf
+- IntelliJ IDEA遇到的一些问题 Class file not found in IntelliJ: https://stackoverflow.com/questions/2199711/class-file-not-found-in-intellij
 
 
 这门课边看边学。
@@ -38,12 +27,11 @@ https://joshhug.gitbooks.io/hug61b/content/chap1/chap11.html
 
 
 
-##### 作业中做错的地方：
+## 作业中做错的地方：
 - disc02: Scope; Pass-by-Value; Static:
 	- Pass-by-What? 注意java的Pass-by-Value按值传递。看disc02的第一题。
 	- Static Methods! 看disc02的第二题。
-	- Mac的`rm`指令没法在回收站里找到。。。突然脑抽把`mv`达成`rm`，结果文件被删没了。。。解决方法参考这个 https://www.jianshu.com/p/5552f3340682
-0
+	- Mac的`rm`指令没法在回收站里找到。。。突然脑抽把`mv`达成`rm`，结果文件被删没了。。。解决方法参考这个 https://www.jianshu.com/p/5552f33406820
 	- Scope! 看disc02-examprep的第二题Horse-Cult。Since the variable same is declared within if statement, it is not accessible outside the if block. Therefore in the return statement, it would find the same variable cult self. **Different from Python** https://stackoverflow.com/questions/48654795/why-does-this-pointer-point-to-horse-cult-instead-of-horse-horse
 - disc03: 
 	- SLList: insert; reverse(iterative and recursive) 
@@ -56,7 +44,7 @@ https://joshhug.gitbooks.io/hug61b/content/chap1/chap11.html
 
 
 
-##### Notes
+# Notes
 
 - [x] Week 0 : Welcome to CS61B & Course Policies and Logistics
 - [x] Week 1 (1/17-1/19) : Intro, Hello World Java & Defining and Using Classes.		
