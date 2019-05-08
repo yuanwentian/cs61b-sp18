@@ -1,7 +1,12 @@
+##### Resources
 Archive: http://inst.eecs.berkeley.edu/~cs61b/archives.html
+
 Spring 2019: https://sp19.datastructur.es
+
 Spring 2018: https://sp18.datastructur.es
+
 LectureCode: https://github.com/Berkeley-CS61B/lectureCode
+
 Autograder: https://www.gradescope.com (To sign up, use the entry code 93PK75)
 The autograder is now open to the public. Sign up using entry code MNXYKX at gradescope.com.
 
@@ -21,6 +26,9 @@ IntelliJ IDEA遇到的一些问题
 
 这门课边看边学。
 
+Textbook: CS61B
+https://joshhug.gitbooks.io/hug61b/content/chap1/chap11.html
+
 ***Reading一直没看，也要看！！！！！！！***
 ***Reading一直没看，也要看！！！！！！！***
 ***Reading一直没看，也要看！！！！！！！***
@@ -29,7 +37,8 @@ IntelliJ IDEA遇到的一些问题
 ***Reading一直没看，也要看！！！！！！！***
 
 
-作业中做错的地方：
+
+##### 作业中做错的地方：
 - disc02: Scope; Pass-by-Value; Static:
 	- Pass-by-What? 注意java的Pass-by-Value按值传递。看disc02的第一题。
 	- Static Methods! 看disc02的第二题。
@@ -46,8 +55,8 @@ IntelliJ IDEA遇到的一些问题
 
 
 
-Textbook: CS61B
-https://joshhug.gitbooks.io/hug61b/content/chap1/chap11.html
+
+##### Notes
 
 - [x] Week 0 : Welcome to CS61B & Course Policies and Logistics
 - [x] Week 1 (1/17-1/19) : Intro, Hello World Java & Defining and Using Classes.		
