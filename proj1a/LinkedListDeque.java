@@ -128,15 +128,15 @@ public class LinkedListDeque<T> {
 
     /** recursively get */
     public T getRecursive(int index) {
-        return (T) getRecursive(sentinel.next, index);
+        return (T) getRecursiveHelper(sentinel.next, index);
     }
 
-    public T getRecursive(Node start, int index) {
+    private T getRecursiveHelper(Node start, int index) {
         if (index == 0) {
             return (T) start.item;
         }
         else {
-            return (T) getRecursive(start.next, index-1);
+            return (T) getRecursiveHelper(start.next, index-1);
         }
     }
 }
