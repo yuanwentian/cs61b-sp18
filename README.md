@@ -44,7 +44,7 @@ https://joshhug.gitbooks.io/hug61b/content/chap1/chap11.html
 
 
 
-# Notes
+## Notes
 
 - [x] Week 0 : Welcome to CS61B & Course Policies and Logistics
 - [x] Week 1 (1/17-1/19) : Intro, Hello World Java & Defining and Using Classes.		
