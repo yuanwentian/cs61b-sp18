@@ -15,5 +15,51 @@ public class Palindrome {
         return resultDeque;
     }
 
+    /**
+     * Notes:
+     * 1. Any word of length 1 or 0 is a palindrome.
+     * 2. ‘A’ and ‘a’ should not be considered equal.
+     */
+    public boolean isPalindrome(String word) {
+        boolean result = true;
+        Deque<Character> wordDeque = wordToDeque(word);
+        for (int i = 0; i < wordDeque.size()/2; i++) {
+            Character a = wordDeque.removeFirst();
+            Character b = wordDeque.removeLast();
+            if (a != b) {
+                result = false;
+            }
+        }
+        return result;
+    }
+
+    public boolean isPalindrome(String word, CharacterComparator cc) {
+        boolean result = true;
+        Deque<Character> wordDeque = wordToDeque(word);
+        for (int i = 0; i < wordDeque.size()/2; i++) {
+            Character a = wordDeque.removeFirst();
+            Character b = wordDeque.removeLast();
+            if (!cc.equalChars(a, b)) {
+                result = false;
+            }
+        }
+        return result;
+    }
+
+
+    public boolean isPalindromeRecursive(String word) {
+        Deque<Character> wordDeque = wordToDeque(word);
+        return isPalindromeRecursiveHelper(wordDeque);
+    }
+
+    private boolean isPalindromeRecursiveHelper(Deque<Character> d) {
+        if (d.size() == 0 || d.size() == 1) {
+            return true;
+        } else {
+            Character a = d.removeFirst();
+            Character b = d.removeLast();
+            return (a == b) && isPalindromeRecursiveHelper(d);
+        }
+    }
 
 }
