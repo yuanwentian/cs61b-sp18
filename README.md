@@ -649,3 +649,34 @@ ___
 			- HWs: Apply data structures algorithms.
 			- Project 3: Efficiency oriented programming.            
 
+- [x] Week 7 (2/26 - 3/2) : Asymptotics I, II, III
+	- Writing Efficient Programs
+		- Efficiency comes in two flavors:
+			- Programming cost (course to date).  
+				- How long does it take to develop your programs?
+				- How easy is it to read, modify, and maintain your code?
+					- More important than you might think!
+					- Majority of cost is in maintenance, not development!
+			- Execution cost (from today to the end of the course)/
+				- How much time does your program take to execute?
+				- How much memory does your program require?   
+	- Characterization 1 Clock Time
+		-  How Do I Runtime Characterization?
+			- Our goal is to somehow characterize the runtimes of the functions below
+				- Characterization should be simple and mathematically rigorous.
+				- Characterization should demonstrate superiority  
+	- Techniques for Measuring Computation Cost
+		- Technique 1: Measuring execution time. (however, may require large amounts of computation time. Result varies with machine, compiler, input data, etc)
+	- Technique 2: Operation Counting (symbolic count)
+	- Why Scaling Matters?
+		- Asymptotic Behavior
+		- Parabolas vs. Lines  
+	- Worst Case Orders of Growth
+		- Duplicate Finding: Our goal is to somehow characterize the runtimes of the functions below.
+	- Simplified Analysis
+		- Analysis of Nested For Loops 
+	- Big-Theta
+		- belongs to big theta with N to the 4th (big-theta(N^4)) 
+		- Big-Theta: Formal Definition: R(N) 
+- [x] Week 8 (3/5 - 3/9) : Disjoint Sets,  Trees, BSTs, Balanced BSTs
+	- Disjoint Sets
