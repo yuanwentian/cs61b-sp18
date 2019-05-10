@@ -648,9 +648,9 @@ ___
 			- Labs: Implement data structures
 			- HWs: Apply data structures algorithms.
 			- Project 3: Efficiency oriented programming.            
-
+			
 - [x] Week 7 (2/26 - 3/2) : Asymptotics I, II, III
-	- Writing Efficient Programs
+	- Asymptotics 1: Writing Efficient Programs
 		- Efficiency comes in two flavors:
 			- Programming cost (course to date).  
 				- How long does it take to develop your programs?
@@ -660,23 +660,83 @@ ___
 			- Execution cost (from today to the end of the course)/
 				- How much time does your program take to execute?
 				- How much memory does your program require?   
-	- Characterization 1 Clock Time
+	- Asymptotics 1: Characterization 1 Clock Time
 		-  How Do I Runtime Characterization?
 			- Our goal is to somehow characterize the runtimes of the functions below
 				- Characterization should be simple and mathematically rigorous.
 				- Characterization should demonstrate superiority  
-	- Techniques for Measuring Computation Cost
+	- Asymptotics 1: Techniques for Measuring Computation Cost
 		- Technique 1: Measuring execution time. (however, may require large amounts of computation time. Result varies with machine, compiler, input data, etc)
-	- Technique 2: Operation Counting (symbolic count)
-	- Why Scaling Matters?
+	- Asymptotics 1: Technique 2: Operation Counting (symbolic count)
+	- Asymptotics 1: Why Scaling Matters?
 		- Asymptotic Behavior
 		- Parabolas vs. Lines  
-	- Worst Case Orders of Growth
+	- Asymptotics 1: Worst Case Orders of Growth
 		- Duplicate Finding: Our goal is to somehow characterize the runtimes of the functions below.
-	- Simplified Analysis
+	- Asymptotics 1: Simplified Analysis
 		- Analysis of Nested For Loops 
-	- Big-Theta
+	- Asymptotics 1: Big-Theta
 		- belongs to big theta with N to the 4th (big-theta(N^4)) 
 		- Big-Theta: Formal Definition: R(N) 
+	- Asymptotics 2: Simple Nested Loops in Big-Theta
+	- Asymptotics 2: Nested For Loops in Big-Theta with Geometric Outer Loop
+		```java
+		public static void printParty(int n) {
+			for (int i = 1; i <= n; i = i * 2) {
+				for (int j = 0; j < i; j += 1) {
+					System.out.println("hello");
+					int ZUG = 1 + 1;
+				}
+			}
+		} // 1 + 2 + 4 + 8 + ... + Q = 2Q - 1 = Big-Theta(Q)
+		```
+		The order of growth is "n".
+	- Asymptotics 2: There is no magic shortcut for these problem
+		- Runtime analysis often requires careful thought;
+		- Strategies:
+			- Find exact sum.
+			- Write out examples.
+			- Draw pictures.
+	- Asymptotics 2: Tree Recursion
+	- Asymptotics 2: **Binary Search** (Intuitive)
+	- Asymptotics 2: Binary Search (Exact Count)
+	- Asymptotics 2:  Mergesort Prelude
+		- Selection Sort: A Prelude to Mergesort
+		- Array Merge  
+	- Asymptotics 2: **Mergesort**
+		- Using Merge to Speed Up the Sorting Process
+		- Mergesort Order of Growth(worst): NlogN
+	- Asymptotics 2: Summary
+		- Theoretical analysis of algorithm performance requires **careful thought**.
+			- There are **no magic shortcuts** for analyzing code.   
+			- Know how to sum 1 + 2 + 3 + ... + N and 1 + 2 + 4 + ... + N.
+			- Many runtime problems you'll do in this class resemble one of the five problems from today, see textbook, study guide, and discussion for more practice.
+			- This topic has one of the highest skill ceilings of all topics in the course.
+		- Different solutions to the same problem, e.g. sorting, may have different runtimes.
+	- Asymptotics 3: Big O
+		- Whereas Big Theta can informally be thought of as something like "equals", Big O can be thought of as "less than or equal".
+		- Big Theta: Formal Definition
+		- Big O: Formal Definition
+	- Asymptotics 3: Why Big O is Useful?
+		- The Limitations of Big Theta
+			- Big Theta expresses exact order of growth for runtime in terms of N.
+				- If runtime depends on more factors than just N, may need different Big Theta for every interesting conditions.
+			- We can just use big O and avoid qualifying our statement at all.     
+ 	- Asymptotics 3: Big O Abuse
+ 		- Important: Big O does not mean "worst case"! But often abused to mean this. 
+ 		- Usefulness of Big O
+ 			- Allow us to make simple blanket statements
+ 			- Sometimes don't know the exact runtime, so use O to give an upper bound. 
+ 	- Asymptotics 3: Big Omega
+ 		- Big Omega can be thought of as "greater than or equal".
+ 		- Two common uses for Big Omega
+ 			- Very careful proofs of Big Theta runtime.
+ 			- Providing lower bounds for the hardness of a problem.   
+ 	- Asymptotics 3: Amortized Analysis: Provides a way to prove the average cost of operations.
+ 		- Geometric Array Resizing (Intuitive):
+ 			- Worst case: Big-Theta(N); Average case: Big-Theta(1);
+ 		- More Rigorous Amortized Analysis
+ 			- Cost Model: Array accesses
+ 			- Potentials and Amortized Cost Bounds 
 - [x] Week 8 (3/5 - 3/9) : Disjoint Sets,  Trees, BSTs, Balanced BSTs
 	- Disjoint Sets
