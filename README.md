@@ -739,4 +739,69 @@ ___
  			- Cost Model: Array accesses
  			- Potentials and Amortized Cost Bounds 
 - [x] Week 8 (3/5 - 3/9) : Disjoint Sets,  Trees, BSTs, Balanced BSTs
-	- Disjoint Sets
+	- Disjoint Sets (Union-Find)
+		- Dynamic Connectivity and the Disjoint Sets Problem
+		- Quick Find
+		- Quick Union
+		- Weighted Quick Union
+		- Path Compression (CS170 Preview)
+	- Metal-goals of the Coming Lectures: Data Structure Refinement
+	- The Dynamic Connectivity Problem
+		- Two operations: 
+			- connect(p, q)
+			- isConnected(p, q)
+		- The Disjoint Sets ADT
+			- Goal: Design an efficient DisjointSets implementation
+				- Number of elements N can be huge.
+				- Number of method calls M can be huge.
+				- Calls to methods may be interspaced (e.g. can't assume that we stop getting connect calls after some point).
+	- The Naive Approach
+		- Connecting two things: Record every single line.
+		- Checking connectedness:  
+	- A Better Approach: Connected Components
+		- Rather than manually writing out every single connecting line, record the sets that something belongs to.      
+		- A ***connected component*** is a maximal set of items that are mutually connected.
+	- Quick Find
+		- Challenge: Pick Data Structures to Support Tracking of Sets
+			- Idea #1: Map<Interger, SetGuy>, where the integer is the item in question. (A map from integers is also an array, )
+				- map.get(1) <- return a reference to {0, 1, 2, 4}
+			- Idea #2: List\<HashSet\>, where we move things around between sets
+				- Requires iterating through all the hash sets to find something 
+		- Using an Array 
+			- One natural choice: int[] where its entry gives set number of item i.
+				- connect(p, q): Change entries that equal id[p] to id[q]
+		- QuickFindDS
+		- Improving the Connect Operation: We're still going to stick with connected components, but will represent connected components differently.
+			- Assign each node a parent (instead of an id)
+				- An innocuous sounding, seemingly arbitrary solution.
+				- Unlocks a pretty amazing universe of math that we won't discuss.   
+		- Set Union Using Rooted-Tree Representation
+			- The Worst Case (For N items, what's the worst case runtime for connect(p, q) and isConnected(p, q)?)
+				- If we always connect the first item's tree below the second items's tree, we can end up with a tree of height M after M operations. 
+		- Weighted Quick Union (Improvement #1)
+			- Modify quick-union to avoid tall trees.
+				- Track tree size (**number** of elements).
+				- New rule: Always link root of **smaller** tree **to larger** tree.   
+		- Implementing Weighted Quick Union
+			- WeightedQuickUnion Performance:  
+				- Max depth of any item: log N
+				- Depth of an element x increases only when tree T1 that contains x is linked below some other tree T2.
+					- The size of the tree at least doubles since weight(T2) >= weight(T1).
+					- Tree containing x doubles at most log N times.
+		- Performance Summary
+			- QuickFindDS (Constructor: Big-Theta(N); connect: Big-Theta(N); isConnected: Big-Theta(1))
+			- QuickUnionDS (Constructor: Big-Theta(N); connect: Big-O(N); isConnected: Big-O(N))
+			- WeightedQuickUnionDS(Constructor: Big-Theta(N); connect: Big-O(log N); isConnected: Big-O(log N))
+		- Path Compression	 
+- [x] Week 9 (3/12 - 3/16) : Hashing, Heaps, Advanced Trees, incl. Geometric.
+
+
+- [x] Week 10 (3/19 - 3/23) : Midterm 2 Review, Graphs, Graph Traversals
+
+- [x] Week 11 (4/2 - 4/6) : Shortest Paths, Minimum Spanning Trees, Dynamic Programming
+
+- [x] Week 12 (4/9 - 4/13) : Basic Sorting Algorithms, Quick Sort, More Quick Sort, Stability, Shuffling.
+
+- [x] Week 13 (4/16 - 4/20) : Sorting and Algorithmic Bounds, Radix Sorts, Overview, Tries.
+
+- [x] Week 14 (4/23 - 4/27) : Compression, Reductions, Algorithmic Bounds, NP Completeness, Summary, Fun
