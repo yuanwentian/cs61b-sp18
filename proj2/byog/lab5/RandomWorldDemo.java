@@ -5,7 +5,7 @@ import byog.TileEngine.TETile;
 import byog.TileEngine.Tileset;
 
 import java.util.Random;
-
+import java.awt.Color;
 /**
  * Draws a world that contains RANDOM tiles.
  */
@@ -44,13 +44,47 @@ public class RandomWorldDemo {
         }
     }
 
+    public static void addHexagon(TETile[][] tiles, int s, int xStart, int yStart) {
+        TETile A = new TETile('a', Color.white, Color.black, "player");
+        int height = tiles[0].length;
+        int width = tiles.length;
+        for (int x = 0; x < width; x += 1) {
+            for (int y = 0; y < height; y += 1) {
+                tiles[x][y] = Tileset.NOTHING;
+            }
+        }
+
+        for (int x = s; x < s+xStart; x += 1) {
+            for (int y = s; y < s+yStart; y += 1) {
+                tiles[x][y] = A;
+            }
+        }
+    }
+
+    public static void drawUpHexagon(TETile[][] tiles, int s, int xStart, int yStart) {
+        TETile A = new TETile('a', Color.white, Color.black, "player");
+        for (int y = yStart; y < s+yStart; y += 1) {
+            for (int x = xStart; x < s+x; y += 1) {
+                tiles[x][y] = A;
+            }
+        }
+    }
+
+    public static void drawDownHexagon(TETile[][] tiles, int s, int xStart, int yStart) {
+        TETile A = new TETile('a', Color.white, Color.black, "player");
+        for (int x = s; x < s+a; x += 1) {
+            for (int y = 2; y < s+a; y += 1) {
+                tiles[x][y] = A;
+            }
+        }
+    }
+
     public static void main(String[] args) {
         TERenderer ter = new TERenderer();
         ter.initialize(WIDTH, HEIGHT);
-
         TETile[][] randomTiles = new TETile[WIDTH][HEIGHT];
-        fillWithRandomTiles(randomTiles);
-
+//        fillWithRandomTiles(randomTiles);
+        addHexagon(randomTiles, 6, 2);
         ter.renderFrame(randomTiles);
     }
 
